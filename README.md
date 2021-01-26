@@ -1,4 +1,4 @@
-# Hoare Lea Common Web UI Library
+# DE Common Web UI Library
 
 
 ## Features:
