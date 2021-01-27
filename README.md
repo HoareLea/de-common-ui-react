@@ -110,13 +110,13 @@ npm login --registry=https://npm.pkg.github.com
 npm publish --access=private
 ```
 
-The `"prepublishOnly": "npm run build"` script in `package.json` will execute before publish occurs, ensuring the `build/` directory and the compiled component library exist.
+The `"prepublishOnly": "npm run build"` script in `package.json` will execute before publish occurs, ensuring the `lib/` directory and the compiled component library exist.
 
 ### Hosting via GitHub
 
 I recommend you host the component library using NPM. However, if you don't want to use NPM, you can use GitHub to host it instead.
 
-You'll need to remove `build/` from `.gitignore`, build the component library (`npm run build`), add, commit and push the contents of `build`.
+You'll need to remove `lib/` from `.gitignore`, build the component library (`npm run build`), add, commit and push the contents of `lib`.
 
 You can then install your library into other projects by running:
 

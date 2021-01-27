@@ -13,4 +13,4 @@ const TestComponent: React.FC<TestComponentProps> = ({ theme }) => (
   </div>
 );
 
-export default TestComponent;
+export { TestComponent };

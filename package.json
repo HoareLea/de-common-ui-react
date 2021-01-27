@@ -1,12 +1,11 @@
 {
   "name": "@HoareLea/de-common-ui-react",
-  "version": "1.0.2",
-  "main": "build/index.js",
-  "module": "build/index.esm.js",
+  "version": "0.0.1",
+  "main": "lib/index.js",
   "files": [
-    "build"
+    "lib"
   ],
-  "types": "build/index.d.ts",
+  "types": "lib/index.d.ts",
   "description": "Common UI Library for all Hoare Lea DE web projects",
   "scripts": {
     "build": "rollup -c",
@@ -43,6 +42,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-multi-entry": "^4.0.0",
     "@rollup/plugin-node-resolve": "^11.1.0",
     "@storybook/react": "^6.1.12",
     "@testing-library/jest-dom": "^5.11.9",
