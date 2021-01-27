@@ -1,7 +1,8 @@
 {
-  "name": "@HoareLea/de-common-ui-react",
+  "name": "@hoarelea/de-common-ui-react",
   "version": "0.0.1",
   "main": "lib/index.js",
+  "module": "lib/index.js",
   "files": [
     "lib"
   ],
@@ -69,5 +70,8 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "directories": {
+    "lib": "lib"
+  }
 }

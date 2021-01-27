@@ -15,6 +15,7 @@ export default {
       sourcemap: true
     }
   ],
+  // preserveModules: true,
   plugins: [
     multi( { entryFileName: 'index.js'}),
     peerDepsExternal(),
