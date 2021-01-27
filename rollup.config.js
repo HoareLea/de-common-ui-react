@@ -16,7 +16,7 @@ export default {
     }
   ],
   plugins: [
-    multi(),
+    multi( { entryFileName: 'index.js'}),
     peerDepsExternal(),
     nodeResolve(),
     commonjs(),
