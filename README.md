@@ -14,6 +14,12 @@
 - [TypeScript](https://www.typescriptlang.org/)
 
 ## Installation
+First up you'll need a `.npmrc` file in the root of your repo, alongside `package.json`.
+Add the following registry entry to it:
+```
+registry=https://npm.pkg.github.com/hoarelea
+```
+
 ```
 npm i --save @HoareLea/de-common-ui-react
 OR
@@ -111,22 +117,6 @@ npm publish --access=private
 ```
 
 The `"prepublishOnly": "npm run build"` script in `package.json` will execute before publish occurs, ensuring the `build/` directory and the compiled component library exist.
-
-### Hosting via GitHub
-
-I recommend you host the component library using NPM. However, if you don't want to use NPM, you can use GitHub to host it instead.
-
-You'll need to remove `build/` from `.gitignore`, build the component library (`npm run build`), add, commit and push the contents of `build`.
-
-You can then install your library into other projects by running:
-
-```
-npm i --save @HoareLea/de-common-ui-react
-
-or 
-
-npm i --save @HoareLea/de-common-ui-react@<version>
-```
 
 ### Dist tags
 Distribution tags (dist-tags) are human-readable labels that you can use to organize and label different versions of packages you publish. dist-tags supplement semantic versioning. In addition to being more human-readable than semantic version numbering, tags allow publishers to distribute their packages more effectively.
