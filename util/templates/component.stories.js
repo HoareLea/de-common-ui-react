@@ -1,15 +1,18 @@
 module.exports = (componentName) => ({
-  content: `// Generated with util/create-component.js
-import React from "react";
-import ${componentName} from "./${componentName}";
+  content: `
+import React from 'react';
+import { Story } from '@storybook/react/types-6-0';
+import ${componentName} from './${componentName}';
+import { ${componentName}Props } from './${componentName}.types';
 
 export default {
-    title: "${componentName}"
+  title: 'Components/${componentName}',
+  component: ${componentName},
+  argTypes: {}
 };
 
-export const WithBar = () => <${componentName} foo="bar" />;
-
-export const WithBaz = () => <${componentName} foo="baz" />;
-`,
+export const Default: Story<${componentName}Props> = (props) => {
+  return <${componentName} {...props}/>;
+};`,
   extension: `.stories.tsx`
 });

@@ -14,9 +14,16 @@
 - [TypeScript](https://www.typescriptlang.org/)
 
 ## Installation
+First up you'll need a `.npmrc` file in the root of your repo, alongside `package.json`.
+Add the following registry entry to it:
+```
+registry=https://npm.pkg.github.com/hoarelea
+```
+
+Then install:
 ```
 npm i --save @HoareLea/de-common-ui-react
-OR
+Or install a version...
 npm i --save @HoareLea/de-common-ui-react@<version>
 ```
 
@@ -63,6 +70,7 @@ This will generate:
 ```
 /src
   /YourComponentName
+    index.ts
     YourComponentName.tsx
     YourComponentName.stories.tsx
     YourComponentName.test.tsx
@@ -74,32 +82,10 @@ The default templates for each file can be modified under `util/templates`.
 
 Don't forget to add the component to your `index.ts` exports if you want the library to export the component!
 
-### Installing Component Library Locally
-
-Let's say you have another project (`test-app`) on your machine that you want to try installing the component library into without having to first publish the component library. In the `test-app` directory, you can run:
-
-```
-npm i --save ../de-common-ui-react
-```
-
-which will install the local component library as a dependency in `test-app`. It'll then appear as a dependency in `package.json` like:
-
-```JSON
-  ...
-  "dependencies": {
-    ...
-    "de-common-ui-react": "file:../de-common-ui-react",
-    ...
-  },
-  ...
-```
-
-Your components can then be imported and used in that project.
 
 ## Publishing as a private package on Github
 
 ### npm package scoping to @HoareLea
-
 
 ```
 nvm use 14
@@ -111,22 +97,6 @@ npm publish --access=private
 ```
 
 The `"prepublishOnly": "npm run build"` script in `package.json` will execute before publish occurs, ensuring the `build/` directory and the compiled component library exist.
-
-### Hosting via GitHub
-
-I recommend you host the component library using NPM. However, if you don't want to use NPM, you can use GitHub to host it instead.
-
-You'll need to remove `build/` from `.gitignore`, build the component library (`npm run build`), add, commit and push the contents of `build`.
-
-You can then install your library into other projects by running:
-
-```
-npm i --save @HoareLea/de-common-ui-react
-
-or 
-
-npm i --save @HoareLea/de-common-ui-react@<version>
-```
 
 ### Dist tags
 Distribution tags (dist-tags) are human-readable labels that you can use to organize and label different versions of packages you publish. dist-tags supplement semantic versioning. In addition to being more human-readable than semantic version numbering, tags allow publishers to distribute their packages more effectively.
