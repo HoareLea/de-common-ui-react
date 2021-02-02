@@ -1,6 +1,6 @@
-export interface ButtonProps {
-    size?: 'sm' | 'md' | 'lg';
-    appearance?: 'primary' | 'minimal';
-    intent?: 'success' | 'warning';
+import { CommonComponent, Appearance, Intention, Size } from '../common.models';
+export interface ButtonProps extends CommonComponent {
+    size?: Size;
+    intent?: Intention;
     otherText?: string;
 }

@@ -1,6 +1,6 @@
 {
   "name": "@hoarelea/de-common-ui-react",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "build/index.js",
   "module": "build/index.esm.js",
   "files": [
@@ -73,8 +73,5 @@
   },
   "dependencies": {
     "evergreen-ui": "^5.1.2"
-  },
-  "directories": {
-    "lib": "lib"
   }
 }

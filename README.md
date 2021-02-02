@@ -20,9 +20,10 @@ Add the following registry entry to it:
 registry=https://npm.pkg.github.com/hoarelea
 ```
 
+Then install:
 ```
 npm i --save @HoareLea/de-common-ui-react
-OR
+Or install a version...
 npm i --save @HoareLea/de-common-ui-react@<version>
 ```
 
@@ -69,6 +70,7 @@ This will generate:
 ```
 /src
   /YourComponentName
+    index.ts
     YourComponentName.tsx
     YourComponentName.stories.tsx
     YourComponentName.test.tsx
@@ -80,32 +82,10 @@ The default templates for each file can be modified under `util/templates`.
 
 Don't forget to add the component to your `index.ts` exports if you want the library to export the component!
 
-### Installing Component Library Locally
-
-Let's say you have another project (`test-app`) on your machine that you want to try installing the component library into without having to first publish the component library. In the `test-app` directory, you can run:
-
-```
-npm i --save ../de-common-ui-react
-```
-
-which will install the local component library as a dependency in `test-app`. It'll then appear as a dependency in `package.json` like:
-
-```JSON
-  ...
-  "dependencies": {
-    ...
-    "de-common-ui-react": "file:../de-common-ui-react",
-    ...
-  },
-  ...
-```
-
-Your components can then be imported and used in that project.
 
 ## Publishing as a private package on Github
 
 ### npm package scoping to @HoareLea
-
 
 ```
 nvm use 14

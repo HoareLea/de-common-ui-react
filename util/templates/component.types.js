@@ -1,8 +1,8 @@
 module.exports = (componentName) => ({
-  content: `// Generated with util/create-component.js
-export interface ${componentName}Props {
-    foo: string;
-}
-`,
+  content: `
+import { CommonComponent } from '../common.models';
+export interface ${componentName}Props extends CommonComponent {
+  foo: string;
+}`,
   extension: `.types.ts`
 });
