@@ -2,7 +2,7 @@ export interface CommonComponent {
   appearance?: Appearance;
   className?: string;
   disabled?: boolean;
-  id: string;
+  id?: string;
   isInvalid?: boolean;
   required?: boolean; // Makes the input element required.
 };

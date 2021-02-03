@@ -6,7 +6,7 @@ import { CheckboxProps } from "./Checkbox.types";
 import "./Checkbox.scss";
 
 const Checkbox: React.FC<CheckboxProps> = (props) => (
-    <EgCheckbox { ...props } label="My checkbox" />
+    <EgCheckbox data-testid="Checkbox" { ...props } label="My checkbox" />
 );
 
 export default Checkbox;

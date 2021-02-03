@@ -25,7 +25,7 @@ const RadioGroup: React.FC<RadioGroupProps> = (props) => {
   const height = size ? getSize(size) : getSize('md');
 
   return (
-  <EgRadioGroup size={ height } {...rest} />
+  <EgRadioGroup data-testid="RadioGroup" size={ height } {...rest} />
 )};
 
 export default RadioGroup;

@@ -6,6 +6,7 @@ on:
       - master
     paths-ignore: 
       - '.github/**'
+      - '.storybook/**'
       - 'infrastructure/**'
   pull_request:
     types: [opened, synchronize, reopened, closed]

@@ -7,7 +7,7 @@ import "./FormField.scss";
 const FormField: React.FC<FormFieldProps> = (props) => {
   const { children, ...rest } = props;
   return (
-  <EgFormField { ...rest }>{ children }</EgFormField>
+  <EgFormField data-testid="FormField" { ...rest }>{ children }</EgFormField>
 )};
 
 export default FormField;

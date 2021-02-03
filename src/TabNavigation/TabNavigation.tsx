@@ -5,9 +5,8 @@ import { TabNavigationProps } from "./TabNavigation.types";
 
 import "./TabNavigation.scss";
 
-const TabNavigation: React.FC<TabNavigationProps> = ({ foo }) => (
-    <div data-testid="TabNavigation" className="foo-bar">{foo}</div>
+const TabNavigation: React.FC<TabNavigationProps> = (props) => (
+    <div data-testid="TabNavigation" className="foo-bar"></div>
 );
 
 export default TabNavigation;
-

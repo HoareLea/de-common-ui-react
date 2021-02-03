@@ -2,9 +2,9 @@
 import { CommonComponent } from '../common.models';
 
 export interface RadioGroupProps extends CommonComponent {
+  label: string;
   size?: 'sm' | 'md';
-  options: RadioProps[];
-  value: string;
+  options?: RadioProps[];
   onChange?: () => object;
 }
 
@@ -13,7 +13,6 @@ export interface RadioProps extends CommonComponent {
   value: string;
   onChange?: () => object;
   checked?: boolean;
-  value: string;
   label: string;
-  name: string;
+  name?: string;
 }

@@ -10,18 +10,23 @@ describe("Test Component", () => {
 
   beforeEach(() => {
     props = {
-      foo: "bar"
+      label: "Some label",
+      options: [
+        {
+          label: "Some option 1",
+          value: "Hello"
+        }
+      ]
     };
   });
 
   const renderComponent = () => render(<RadioGroup {...props} />);
 
-  it("should render foo text correctly", () => {
-    props.foo = "harvey was here";
+  it("should render correctly", () => {
     const { getByTestId } = renderComponent();
 
     const component = getByTestId("RadioGroup");
 
-    expect(component).toHaveTextContent("harvey was here");
+    expect(component).toBeVisible();
   });
 });

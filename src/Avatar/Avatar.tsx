@@ -9,7 +9,7 @@ const Avatar: React.FC<AvatarProps> = (props) => {
   const { fullName, size, ...rest } = props;
   const height = size ? getSize(size) : getSize('md');
   return (
-    <EgAvatar size={ height } { ...rest } name={ fullName }/>
+    <EgAvatar data-testid="Avatar" size={ height } { ...rest } name={ fullName }/>
   )
 }
 

@@ -9,7 +9,7 @@ const TextInput: React.FC<TextInputProps> = (props) => {
   const { size, ...rest } = props;
   const height = size ? getSize(size) : getSize('md');
   return (
-  <EgTextInput height={ height } { ...rest }/>
+  <EgTextInput data-testid="TextInput" height={ height } { ...rest }/>
 )};
 
 export default TextInput;

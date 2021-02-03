@@ -10,18 +10,17 @@ describe("Test Component", () => {
 
   beforeEach(() => {
     props = {
-      foo: "bar"
+      
     };
   });
 
   const renderComponent = () => render(<Button {...props} />);
 
-  it("should render foo text correctly", () => {
-    props.foo = "harvey was here";
+  it("should render correctly", () => {
     const { getByTestId } = renderComponent();
 
     const component = getByTestId("Button");
 
-    expect(component).toHaveTextContent("harvey was here");
+    expect(component).toBeVisible();
   });
 });

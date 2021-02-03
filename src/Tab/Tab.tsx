@@ -6,7 +6,7 @@ import { TabProps } from "./Tab.types";
 import "./Tab.scss";
 
 const Tab: React.FC<TabProps> = (props) => (
-    <EgTab {...props}>Default tab</EgTab>
+    <EgTab data-testid="Tab" {...props}>Default tab</EgTab>
 );
 
 export default Tab;

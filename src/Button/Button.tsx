@@ -8,7 +8,7 @@ const Button: React.FC<ButtonProps> = (props) => {
   const { children, otherText, size, ...rest } = props;
   const height = size ? getSize(size) : getSize('md');
   return (
-    <EgButton height={ height } { ...rest }>{ children } { otherText }</EgButton>
+    <EgButton data-testid="Button" height={ height } { ...rest }>{ children } { otherText }</EgButton>
   )
 };
 
