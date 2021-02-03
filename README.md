@@ -1,5 +1,6 @@
 # DE Common Web UI Library
 
+![Node.js Package](https://github.com/HoareLea/de-common-ui-react/workflows/Node.js%20Package/badge.svg?branch=master&event=registry_package)
 
 ## Features:
 
