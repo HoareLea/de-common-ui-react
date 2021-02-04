@@ -1,12 +1,10 @@
 // Generated with util/create-component.js
 import React from "react";
 import { render } from "@testing-library/react";
-
 import Button from "./Button";
-import { ButtonProps } from "./Button.types";
 
 describe("Test Component", () => {
-  let props: ButtonProps;
+  let props: any;
 
   beforeEach(() => {
     props = {
@@ -14,7 +12,9 @@ describe("Test Component", () => {
     };
   });
 
-  const renderComponent = () => render(<Button {...props} />);
+  const handleClick = (sayWhat: string) => console.log(sayWhat);
+
+  const renderComponent = () => render(<Button onClick={() => handleClick('hey')} {...props}>Some button</Button>);
 
   it("should render correctly", () => {
     const { getByTestId } = renderComponent();

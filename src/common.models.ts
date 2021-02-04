@@ -1,10 +1,6 @@
 export interface CommonComponent {
   appearance?: Appearance;
-  className?: string;
-  disabled?: boolean;
-  id?: string;
   isInvalid?: boolean;
-  required?: boolean; // Makes the input element required.
 };
 
 export type Appearance = 'default' | 'primary' | 'minimal';
