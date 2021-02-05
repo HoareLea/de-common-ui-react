@@ -5,7 +5,7 @@ import { render } from "@testing-library/react";
 import FormField from "./FormField";
 import { FormFieldProps } from "./FormField.types";
 
-describe("Test Component", () => {
+describe("Test FormField Component", () => {
   let props: FormFieldProps;
 
   beforeEach(() => {
@@ -18,9 +18,7 @@ describe("Test Component", () => {
 
   it("should render correctly", () => {
     const { getByTestId } = renderComponent();
-
     const component = getByTestId("FormField");
-
     expect(component).toBeVisible();
   });
 });

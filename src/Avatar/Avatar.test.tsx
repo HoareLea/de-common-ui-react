@@ -5,7 +5,7 @@ import { render } from "@testing-library/react";
 import Avatar from "./Avatar";
 import { AvatarProps } from "./Avatar.types";
 
-describe("Test Component", () => {
+describe("Test Avatar Component", () => {
   let props: AvatarProps;
 
   beforeEach(() => {

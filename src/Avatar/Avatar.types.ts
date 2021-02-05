@@ -1,6 +1,7 @@
-import { Size } from './../common.models';
-// Generated with util/create-component.js
-export interface AvatarProps {
+import { HtmlHTMLAttributes } from 'react';
+import { CommonComponent, Size } from './../common.models';
+export interface AvatarProps
+    extends CommonComponent, HtmlHTMLAttributes<AvatarProps> {
     fullName: string;
     src?: string;
     size?: Size;

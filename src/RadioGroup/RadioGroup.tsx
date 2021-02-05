@@ -1,7 +1,7 @@
 
 import React from "react";
 import { RadioGroupProps } from "./RadioGroup.types";
-import { RadioGroup as EgRadioGroup } from 'evergreen-ui';
+import { BoxComponent, RadioGroup as EgRadioGroup } from 'evergreen-ui';
 import "./RadioGroup.scss";
 
 export const getSize = (size: string = 'md') => {
@@ -23,9 +23,10 @@ export const getSize = (size: string = 'md') => {
 const RadioGroup: React.FC<RadioGroupProps> = (props) => {
   const { size, ...rest } = props;
   const height = size ? getSize(size) : getSize('md');
+  const restBoxProps = rest as BoxComponent;
 
   return (
-  <EgRadioGroup data-testid="RadioGroup" size={ height } {...rest} />
+  <EgRadioGroup data-testid="RadioGroup" size={ height } {...restBoxProps} />
 )};
 
 export default RadioGroup;

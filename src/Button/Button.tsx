@@ -7,9 +7,9 @@ import "./Button.scss";
 const Button: React.FC<ButtonProps> = (props) => {
   const { children, size, ...rest } = props;
   const height = size ? getSize(size) : getSize('md');
-  const restProps = rest as BoxComponent;
+  const restBoxProps = rest as BoxComponent;
   return (
-    <EgButton data-testid="Button" height={ height } { ...restProps }>{ children }</EgButton>
+    <EgButton data-testid="Button" height={ height } { ...restBoxProps }>{ children }</EgButton>
   )
 };
 
