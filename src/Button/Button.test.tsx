@@ -1,26 +1,21 @@
 // Generated with util/create-component.js
-import React from "react";
+import React, { ButtonHTMLAttributes, ReactNode } from "react";
 import { render } from "@testing-library/react";
 import Button from "./Button";
+import { ButtonProps } from "./Button.types";
 
-describe("Test Component", () => {
-  let props: any;
+describe("Test Button Component", () => {
+  let props: ButtonProps;
 
   beforeEach(() => {
-    props = {
-      
-    };
+    props = {}
   });
 
-  const handleClick = (sayWhat: string) => console.log(sayWhat);
-
-  const renderComponent = () => render(<Button onClick={() => handleClick('hey')} {...props}>Some button</Button>);
+  const renderComponent = () => render(<Button>HL Button</Button>);
 
   it("should render correctly", () => {
     const { getByTestId } = renderComponent();
-
     const component = getByTestId("Button");
-
     expect(component).toBeVisible();
   });
 });

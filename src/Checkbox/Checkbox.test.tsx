@@ -5,22 +5,18 @@ import { render } from "@testing-library/react";
 import Checkbox from "./Checkbox";
 import { CheckboxProps } from "./Checkbox.types";
 
-describe("Test Component", () => {
+describe("Test Checkbox Component", () => {
   let props: CheckboxProps;
 
   beforeEach(() => {
-    props = {
-      
-    };
+    props = {};
   });
 
   const renderComponent = () => render(<Checkbox {...props} />);
 
   it("should render correctly", () => {
     const { getByTestId } = renderComponent();
-
     const component = getByTestId("Checkbox");
-
     expect(component).toBeVisible();
   });
 });
