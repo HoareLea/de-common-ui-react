@@ -1,0 +1,10 @@
+
+@import "../variables.scss";
+@import "../typography.scss";
+
+button {
+  all: unset;
+  color: blue;
+  -webkit-text-fill-color: blue;
+  cursor: pointer;
+}

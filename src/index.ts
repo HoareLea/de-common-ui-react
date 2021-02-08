@@ -7,6 +7,7 @@ import Tab from "./Tab";
 // import TabNavigation from "./TabNavigation";
 import TextInput from "./TextInput";
 import Toaster from "./Toaster";
+import Popover from './Popover';
 
 export { 
   Button,
@@ -17,5 +18,6 @@ export {
   Tab,
   // TabNavigation,
   TextInput,
-  Toaster
+  Toaster,
+  Popover
 };
