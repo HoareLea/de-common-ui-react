@@ -1,6 +1,8 @@
 
 import { HTMLAttributes } from 'react';
 import { CommonComponent } from '../common.models';
+
+export type PhotoSize = 48 | 96;
 export interface AuthSSOProps extends CommonComponent, HTMLAttributes<HTMLElement>  {
   onSuccess?: () => void;
   onFail?: () => void;

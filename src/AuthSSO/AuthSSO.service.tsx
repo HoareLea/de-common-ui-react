@@ -1,31 +1,31 @@
 import { graphConfig } from "../authConfig";
+import { PhotoSize } from "./AuthSSO.types";
 
-export async function getProfilePhoto(accessToken: string) {
-  const headers = new Headers();
+export async function getProfilePhoto(accessToken: string, size: PhotoSize = 96) {
   const bearer = `Bearer ${accessToken}`;
+  const headers = new Headers();
   headers.append('Authorization', bearer);
 
   const options = {
     method: 'GET',
-    headers: headers,
+    headers,
     responseType: 'blob'
   };
 
-  return fetch(graphConfig.graphMeEndpoint + '/Photos/96x96/$value', options)
+  return fetch(graphConfig.graphMeEndpoint + `/Photos/${size}x${size}/$value`, options)
     .then(response => response.blob())
     .then(res => readFileAsync(res))
     .catch(error => console.log(error));
 }
 
 export async function getProfile(accessToken: string) {
-  const headers = new Headers();
   const bearer = `Bearer ${accessToken}`;
-
+  const headers = new Headers();
   headers.append("Authorization", bearer);
 
   const options = {
       method: "GET",
-      headers: headers
+      headers
   };
 
   return fetch(graphConfig.graphMeEndpoint, options)

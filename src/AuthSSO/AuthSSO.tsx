@@ -7,14 +7,14 @@ import { msalConfig, loginRequest } from "../authConfig";
 import { LogOutIcon, Text, Strong } from 'evergreen-ui';
 import Button from '../Button';
 import Avatar from '../Avatar/Avatar';
-import { getCompleteProfile } from "./graph";
+import { getCompleteProfile } from "./AuthSSO.service";
 import "./AuthSSO.scss";
 
-const defaultWidth: number = 300;
+const defaultWidth: number = 240;
 const defaultHeight: number = 140;
 const defaultPosition = Position.BOTTOM_RIGHT;
 
-const ProfileContent: React.FC<AuthSSOProps> = ({ children, position = defaultPosition, paneWidth = defaultWidth, paneheight = defaultHeight, ...rest }) => {
+const ProfileContent: React.FC<AuthSSOProps> = ({ children, ...rest }) => {
   const { instance, accounts } = useMsal();
   const account = useAccount(accounts[0] || {});
   const [graphData, setGraphData] = useState(null);
@@ -27,7 +27,7 @@ const ProfileContent: React.FC<AuthSSOProps> = ({ children, position = defaultPo
     if (account) {
       instance.acquireTokenSilent({
         ...loginRequest,
-        account,
+        account
       }).then((response) => {
         getCompleteProfile(response.accessToken).then(response => {
           return setGraphData(response);
@@ -38,13 +38,13 @@ const ProfileContent: React.FC<AuthSSOProps> = ({ children, position = defaultPo
 
   return (
     <EgPopover
-      position={position}
+      position={ defaultPosition }
       data-testid="AuthSSO"
       { ...rest }
       content={({ close }) => (
         <Pane
-          width={paneWidth}
-          minHeight={paneheight}
+          width={ defaultWidth }
+          minHeight={ defaultHeight }
           display="block"
           padding="20px"
           flexDirection="column">
@@ -66,7 +66,6 @@ const ProfileContent: React.FC<AuthSSOProps> = ({ children, position = defaultPo
 
 
 const AuthSSO: React.FC<AuthSSOProps> = (props) => {
-  // useEffect(() => { }, []);
   const msalInstance = new PublicClientApplication(msalConfig);
 
   return (
