@@ -39,7 +39,6 @@ const ProfileContent: React.FC<AuthSSOProps> = ({ children, ...rest }) => {
   return (
     <EgPopover
       position={ defaultPosition }
-      data-testid="AuthSSO"
       { ...rest }
       content={({ close }) => (
         <Pane
@@ -55,7 +54,7 @@ const ProfileContent: React.FC<AuthSSOProps> = ({ children, ...rest }) => {
               <div>
                 <Text>{ account ? account.username : 'unknown' }</Text>
               </div>
-            <Button marginTop={20} iconBefore={LogOutIcon}  onClick={() => { close(); instance.logout(); }}>Sign out</Button>
+            <Button iconBefore={LogOutIcon} onClick={() => { close(); instance.logout(); }}>Sign out</Button>
           </>
         </Pane>
       )}>
@@ -67,20 +66,17 @@ const ProfileContent: React.FC<AuthSSOProps> = ({ children, ...rest }) => {
 
 const AuthSSO: React.FC<AuthSSOProps> = (props) => {
   const msalInstance = new PublicClientApplication(msalConfig);
-
   return (
-    <>
+    <div data-testid="AuthSSO">
       <MsalProvider instance={msalInstance}>
         <AuthenticatedTemplate>
           <ProfileContent { ...props }/>
         </AuthenticatedTemplate>
-
         <UnauthenticatedTemplate>
           <Button onClick={() => msalInstance.loginPopup(loginRequest)}>Sign in</Button>
         </UnauthenticatedTemplate>
-
       </MsalProvider >
-    </>
+    </div>
   )
 };
 

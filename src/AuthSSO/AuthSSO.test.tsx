@@ -4,8 +4,9 @@ import { render } from "@testing-library/react";
 
 import AuthSSO from "./AuthSSO";
 import { AuthSSOProps } from "./AuthSSO.types";
+import { act } from "react-dom/test-utils";
 
-describe("Test Component", () => {
+describe("Test AuthSSO Component", () => {
   let props: AuthSSOProps;
 
   beforeEach(() => {
@@ -13,14 +14,16 @@ describe("Test Component", () => {
       
     };
   });
-
-  const renderComponent = () => render(<AuthSSO {...props} />);
+  
+  
+  let component;
 
   it("should render correctly", () => {
-    const { getByTestId } = renderComponent();
-
-    const component = getByTestId("AuthSSO");
-
+    act(() => {
+      const renderComponent = () => render(<AuthSSO {...props} />);
+      const { getByTestId } = renderComponent();
+      component = getByTestId("AuthSSO");
+    });
     expect(component).toBeVisible();
   });
 });

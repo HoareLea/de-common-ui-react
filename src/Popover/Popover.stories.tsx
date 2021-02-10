@@ -21,7 +21,10 @@ export const Default: Story<PopoverProps> = (props) => {
         triggerElement={<Button>Show popover</Button>}
         {...props}
         content={({ close }) => (
+          <>
           <p>Some content</p>
+          <Button onClick={close}>Close</Button>
+          </>
         )}
       >
       </Popover>

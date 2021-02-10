@@ -10,7 +10,6 @@ const defaultHeight: number = 240;
 const Popover: React.FC<PopoverProps> = ({ children, triggerElement, paneWidth = defaultWidth, paneheight = defaultHeight, ...rest }) => {
   return (
     <EgPopover
-      data-testid="Popover"
       content={
         <Pane
           width={ paneWidth }
@@ -23,7 +22,7 @@ const Popover: React.FC<PopoverProps> = ({ children, triggerElement, paneWidth =
         </Pane>
       }
       { ...rest }>
-      { typeof triggerElement !== undefined && <button>{ triggerElement }</button> }
+      { typeof triggerElement !== undefined && <button data-testid="Popover">{ triggerElement }</button> }
     </EgPopover>
   )
 };
