@@ -2,8 +2,8 @@ import { HTMLAttributes } from 'react';
 import { CommonComponent } from '../common.models';
 import { PopoverStatelessProps } from 'evergreen-ui';
 export interface PopoverProps extends CommonComponent, HTMLAttributes<HTMLElement>  {
-  content?: any;
-  triggerElement?: JSX.Element | null;
+  content?: React.ReactNode | ((object: { close: () => void }) => React.ReactNode);
+  triggerElement?: React.ElementType | JSX.Element | null | false;
   isShown?: boolean;
   trigger?: 'click' | 'hover';
   paneWidth?: number;

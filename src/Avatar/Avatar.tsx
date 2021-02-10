@@ -7,7 +7,7 @@ import "./Avatar.scss";
 
 const Avatar: React.FC<AvatarProps> = (props) => {
   const { fullName, size, ...rest } = props;
-  const height = size ? getSize(size) : getSize('md');
+  const height = size ? getSize(size) : getSize('lg');
   const restBoxProps = rest as BoxComponent;
   return (
     <EgAvatar data-testid="Avatar" size={ height } { ...restBoxProps } name={ fullName }/>

@@ -8,8 +8,10 @@ import Tab from "./Tab";
 import TextInput from "./TextInput";
 import Toaster from "./Toaster";
 import Popover from './Popover';
+import AuthSSO from './AuthSSO/AuthSSO';
 
-export { 
+export {
+  AuthSSO,
   Button,
   Avatar,
   Checkbox,
