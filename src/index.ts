@@ -7,8 +7,11 @@ import Tab from "./Tab";
 // import TabNavigation from "./TabNavigation";
 import TextInput from "./TextInput";
 import Toaster from "./Toaster";
+import Popover from './Popover';
+import AuthSSO from './AuthSSO/AuthSSO';
 
-export { 
+export {
+  AuthSSO,
   Button,
   Avatar,
   Checkbox,
@@ -17,5 +20,6 @@ export {
   Tab,
   // TabNavigation,
   TextInput,
-  Toaster
+  Toaster,
+  Popover
 };

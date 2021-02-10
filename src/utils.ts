@@ -10,6 +10,9 @@ export const getSize = (size: string = 'md') => {
     case 'lg':
       height = 48;
       break;
+    case 'xl':
+      height = 56;
+      break;
   
     default:
       break;
