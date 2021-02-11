@@ -64,13 +64,17 @@ const ProfileContent: React.FC<AuthSSOProps> = ({ children, ...rest }) => {
 };
 
 
-const AuthSSO: React.FC<AuthSSOProps> = (props) => {
-  const msalInstance = new PublicClientApplication(msalConfig);
+const AuthSSO: React.FC<AuthSSOProps> = ({ config = null, ...restPros }) => {
+  const msalConfigFromProp = {
+    ...msalConfig && msalConfig,
+    ...config && { auth: config }
+  }
+  const msalInstance = new PublicClientApplication(msalConfigFromProp);
   return (
     <div data-testid="AuthSSO">
       <MsalProvider instance={msalInstance}>
         <AuthenticatedTemplate>
-          <ProfileContent { ...props }/>
+          <ProfileContent { ...restPros }/>
         </AuthenticatedTemplate>
         <UnauthenticatedTemplate>
           <Button onClick={() => msalInstance.loginPopup(loginRequest)}>Sign in</Button>

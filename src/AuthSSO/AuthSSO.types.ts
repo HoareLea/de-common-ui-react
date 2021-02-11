@@ -9,6 +9,7 @@ export interface AuthSSOProps extends CommonComponent, HTMLAttributes<HTMLElemen
   paneWidth?: number;
   paneheight?: number;
   position?: Position;
+  config?: Config | null | undefined;
 }
 
 export enum Position {
@@ -20,4 +21,9 @@ export enum Position {
   BOTTOM_RIGHT = 'bottom-right',
   LEFT = 'left',
   RIGHT = 'right'
+}
+export interface Config {
+  clientId: string;
+  authority?: string;
+  postLogoutRedirectUri?: string;
 }

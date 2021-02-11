@@ -12,5 +12,9 @@ export default {
 
 export const Default: Story<AuthSSOProps> = (props) => (
   <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-    <AuthSSO />
+    <AuthSSO config={{
+      clientId: "c0f989d1-cc78-4e22-b378-79b15be0a8f1",
+      authority: "https://login.microsoftonline.com/7350bd16-821e-44cb-ba83-33512ec76499",
+      postLogoutRedirectUri: 'http://localhost:6006'
+    }}/>
   </div>);
