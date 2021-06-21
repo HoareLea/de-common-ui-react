@@ -87,6 +87,8 @@ Don't forget to add the component to your `index.ts` exports if you want the lib
 ## Publishing as a private package on Github
 
 ### npm package scoping to @HoareLea
+Increment the semver version:
+package.json, "version": "0.0.10",
 
 ```
 nvm use 14

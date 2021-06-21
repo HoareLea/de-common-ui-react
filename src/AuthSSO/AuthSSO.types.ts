@@ -26,4 +26,9 @@ export interface Config {
   clientId: string;
   authority?: string;
   postLogoutRedirectUri?: string;
+  validateAuthority?: boolean;
+  authorityMetadata?: string;
+  knownAuthorities?: Array<string>;
+  redirectUri?: string;
+  navigateToLoginRequestUrl?: boolean;
 }
