@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { AuthSSOProps, Position } from "./AuthSSO.types";
 import { Pane, Popover as EgPopover } from 'evergreen-ui';
-import { MsalProvider, AuthenticatedTemplate, UnauthenticatedTemplate, useMsal, useAccount } from "@azure/msal-react";
-import { PublicClientApplication } from "@azure/msal-browser";
-import { msalConfig, loginRequest } from "../authConfig";
+import { AuthenticatedTemplate, UnauthenticatedTemplate, useMsal, useAccount } from "@azure/msal-react";
+import { loginRequest } from "../authConfig";
 import { LogOutIcon, Text, Strong } from 'evergreen-ui';
 import Button from '../Button';
 import Avatar from '../Avatar/Avatar';
@@ -30,6 +29,7 @@ const ProfileContent: React.FC<AuthSSOProps> = ({ children, ...rest }) => {
         account
       }).then((response) => {
         getCompleteProfile(response.accessToken).then(response => {
+          console.log('logged in yeah!!!')
           return setGraphData(response);
         });
       });
@@ -64,22 +64,16 @@ const ProfileContent: React.FC<AuthSSOProps> = ({ children, ...rest }) => {
 };
 
 
-const AuthSSO: React.FC<AuthSSOProps> = ({ config = null, ...restPros }) => {
-  const msalConfigFromProp = {
-    ...msalConfig && msalConfig,
-    ...config && { auth: config }
-  }
-  const msalInstance = new PublicClientApplication(msalConfigFromProp);
+const AuthSSO: React.FC<AuthSSOProps> = (props: AuthSSOProps) => {
+  const { instance } = useMsal();
   return (
     <div data-testid="AuthSSO">
-      <MsalProvider instance={msalInstance}>
         <AuthenticatedTemplate>
-          <ProfileContent { ...restPros }/>
+          <ProfileContent { ...props }/>
         </AuthenticatedTemplate>
         <UnauthenticatedTemplate>
-          <Button onClick={() => msalInstance.loginPopup(loginRequest)}>Sign in</Button>
+          <Button onClick={() => instance.loginPopup(loginRequest)}>Sign in</Button>
         </UnauthenticatedTemplate>
-      </MsalProvider >
     </div>
   )
 };
