@@ -29,7 +29,6 @@ const ProfileContent: React.FC<AuthSSOProps> = ({ children, ...rest }) => {
         account
       }).then((response) => {
         getCompleteProfile(response.accessToken).then(response => {
-          console.log('logged in yeah!!!')
           return setGraphData(response);
         });
       });
