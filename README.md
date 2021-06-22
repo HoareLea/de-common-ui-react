@@ -58,6 +58,9 @@ npm run storybook:export
 
 You can then serve the files under `storybook-static` using S3, GitHub pages, Express etc. I've hosted this library at: https://www.harveydelaney.com/de-common-ui-react
 
+[Live storybook](https://icy-beach-007206303.azurestaticapps.net/?path=/story/components-authenticated-authsso--default)
+
+
 ### Generating New Components
 
 Use the NodeJS util `util` called `create-component.js`. Instead of copy pasting components to create a new component, you can instead run this command to generate all the files you need to start building out a new component. To use it:

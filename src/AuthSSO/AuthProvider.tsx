@@ -11,7 +11,9 @@ export interface AuthProviderProps extends HTMLAttributes<HTMLElement> {
   config?: Config | null | undefined;
 }
 
-export const AuthProvider: React.FC<AuthProviderProps> = ({ config = null, children, ...restPros }) => {
+// let msalInstance: any;
+
+export const AuthProvider: React.FC<AuthProviderProps> = ({ config = null, children }) => {
   const msalConfigFromProp = {
     ...msalConfig && msalConfig,
     ...config && { auth: config }
@@ -23,3 +25,13 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ config = null, child
     </MsalProvider>
   )
 };
+
+
+export function useAuth() {
+  const { instance, accounts } = useMsal();
+  const account = useAccount(accounts[0] || {});
+  return { 
+    instance,
+    account
+  }
+}

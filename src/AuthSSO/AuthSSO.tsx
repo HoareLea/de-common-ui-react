@@ -66,7 +66,6 @@ const ProfileContent: React.FC<AuthSSOProps> = ({ children, ...rest }) => {
 
 const AuthSSO: React.FC<AuthSSOProps> = (props: AuthSSOProps) => {
   const { instance } = useMsal();
-  console.log(instance);
   return (
     <div data-testid="AuthSSO">
         <AuthenticatedTemplate>
